@@ -6,7 +6,7 @@ Version 2 is a major rewrite of our Java Extension.  You can find the release no
 
 ### Redis Cluster Support
 
-![Cluster Support](<../../.gitbook/assets/Screen Shot 2021-11-19 at 10.27.51 AM.png>)
+![Cluster Support](<../../.gitbook/assets/Screen Shot 2021-11-19 at 10.27.51 AM (1).png>)
 
 We have added the capability to connect to not only standalone Redis instances via our `Redis Cache` connector, but we have introduced now the `Redis Cluster Cache` connector.  This connector can connect to any Redis Cluster and give you all the great features our extension gives.
 

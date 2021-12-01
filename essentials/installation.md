@@ -2,7 +2,7 @@
 
 ## Redis Setup <a href="#redis-setup" id="redis-setup"></a>
 
-You will need to install a Redis Server separately. Your Redis cluster can be a single node, or multiple nodes. The nodes can be installed along side your web servers, or on a server farm of their own-- it's entirely up to you. You can also use docker to spin up a Redis instance. You can use the following docker compose file for quick testing:
+You will need to install a [Redis Server](https://redis.io) separately. Your Redis cluster can be a single node, or multiple nodes. The nodes can be installed along side your web servers, or on a server farm of their own-- it's entirely up to you. You can also use [docker](https://www.docker.com) to spin up a Redis instance. You can use the following docker compose file for quick testing:
 
 ```yaml
 version: '3'
@@ -36,22 +36,26 @@ The Redis extension is installed as a Lucee extension into any Lucee Server vers
 
 ![](<../.gitbook/assets/image (1).png>)
 
-If installed in the server context, you can create server-level caches tha are available to all web contexts in Lucee. The driver will also be availble to all web contexts to add their own local caches or override caches if they need to.
+If installed in the server context, you can create server-level caches that are available to all web contexts in Lucee. The driver will also be available to all web contexts to add their own local caches or override caches if they need to.
 
-### **Add Extension Provider**
+### **ForgeBox Extension Provider**
 
 In your Lucee Administrator under `Extension > Providers` paste in your Ortus provider URL ([https://www.forgebox.io](https://www.forgebox.io)) and click `save`. One added, the new provider URL should show up in the list as verified.
 
 ### **Installing the Extension**
 
-Now click `Extensions > Applications` and wait for the list to load. There should be a item in the list called `Ortus Redis Cache`. You can activate it as a trial or as a full version with a license key after you install.
+Now click `Extensions > Applications` and wait for the list to load. There should be an item in the list called `Ortus Redis Cache`. You can activate it as a trial or as a full version with a license key after you install.
 
-![](<../.gitbook/assets/image (5).png>)
+![](<../.gitbook/assets/image (5) (1).png>)
 
-Click it and then click the `install` button to begin the installation process.
+Click it and then click the `install` button to begin the installation process.\
 
-![](<../.gitbook/assets/image (3).png>)\
 
+{% hint style="danger" %}
+We recommend a complete server install so changes can take effect.
+{% endhint %}
+
+![](<../.gitbook/assets/image (3).png>)
 
 ### **Activating the Extension**
 
@@ -59,18 +63,22 @@ Click it and then click the `install` button to begin the installation process.
 \
 Once the extension installs, you will now see a new menu item in the admin called `Ortus` with a sub menu called `Redis Cache`. Click this menu and you'll see the activation screen where you can enter the `license key` and `license email` with which you purchased the extension with.
 
-You will also have to determine the type of server you are installing the extension to. Development or non-public facing servers are FREE of charge and by default receive up to 4 activations.
+{% hint style="warning" %}
+If you do not see the menu, please do a complete restart of your Lucee Server.
+{% endhint %}
+
+You will also have to determine the type of server you are installing the extension too. Development or non-public facing servers are FREE of charge and by default receive up to 4 activations.
 
 Production servers get only 1 activation, so make sure you choose the right server type. Once you get all your information in the form then click on the `activate` button to finalize the installation. Choose the trial option if you don't have a license and just want to try out the extension. When the trial expires, the cache provider will stop working! **The trial is not for production use**.
 
-![](<../.gitbook/assets/image (4).png>)
+![](<../.gitbook/assets/image (4) (1).png>)
 
 {% hint style="warning" %}
-**Note** : Development and staging servers are FREE of charge and each license includes up to 4 activations. Production licenses are on a per Lucee instance and are allowed 1 activation. If you have any activation issues please contact us at [support@ortussolutions.com](mailto:support@ortussolutions.com). Also, make sure you havea valid internet connection in order to activate your product.\
+&#x20;Development and staging servers are FREE of charge and each license includes up to 4 activations. Production licenses are on a per Lucee instance and are allowed 1 activation. If you have any activation issues please contact us at [support@ortussolutions.com](mailto:support@ortussolutions.com). Also, make sure you have a valid internet connection in order to activate your product.\
 
 {% endhint %}
 
-The Ortus Lucee Redis Extension should now be installed on your server and ready to use. Make sure your Redis cluster is running and proceed on to the next step `--->` creating a cache.
+The Ortus Lucee Redis Extension should now be installed on your server and ready to use.
 
 {% hint style="danger" %}
 **Important**: Please note that the Redis Extension is licensed on a per-JVM basis or on a per container pack (5-container pack). You will need a license for each separate JVM, regardless of how many contexts (sites) are deployed in your Lucee installation. The typical setup is one JVM per physical/virtual server. Please email us at [support@ortussolutions.com](http://127.0.0.1:49339/docs/support@ortussolutions.com) if you have licensing questions.
@@ -78,11 +86,11 @@ The Ortus Lucee Redis Extension should now be installed on your server and ready
 
 ### Downloading The Extension
 
-If you will be using an offline installation or a docker based installation, you can either follow the process above or download the extension and leverage a continous integration server to build your images or server configurations.
+If you will be using an offline installation or a docker based installation, you can either follow the process above or download the extension and leverage a continuous integration server to build your images or server configurations.
 
 [https://downloads.ortussolutions.com/#/ortussolutions/lucee-extensions/ortus-redis-cache/](https://downloads.ortussolutions.com/#/ortussolutions/lucee-extensions/ortus-redis-cache/)
 
-From our artifact repository download the appropriate `lex` file and drop it into your lucee deploy folder: `{lucee-server}/WEB-INF/lucee-server/deploy`. Once the engine starts, it will deploy the extension for you.
+From our artifact repository download the appropriate `lex` file and drop it into your lucee deploy folder: `{lucee-server}/WEB-INF/lucee-server/deploy`. Once the engine starts, it will deploy the extension for you automatically.
 
 #### Automatic Activation <a href="#automatic-activation" id="automatic-activation"></a>
 
