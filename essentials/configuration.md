@@ -1,6 +1,6 @@
 # Configuration
 
-Once the extension is installed you can begin to create cache connections and configure them either via the administrator, via the Application.cfc or via a CFConfig json file.
+Once the extension is installed, you can begin to create cache connections and configure them either via the administrator, via the Application.cfc or via a CFConfig json file.
 
 ## Admin Cache Connection
 
@@ -29,7 +29,7 @@ Check the `Storage` box if you want to be able to use this cache for session or 
 
 #### Host
 
-Enter the Redis server IP addresses or host name.&#x20;
+Enter the Redis server IP address or host name.&#x20;
 
 #### Port
 
@@ -49,15 +49,15 @@ The time in milliseconds to wait for a connection or throw an exception.
 
 #### Max Connections
 
-The maximum number of connections to allow to the redis server.
+The maximum number of connections to allow to the Redis server.
 
 #### Idle Connections
 
-The maximum number of idle connections to keep in the pool to the redis server
+The maximum number of idle connections to keep in the pool to the Redis server
 
 #### Cache Key Prefix
 
-The default key prefix is `lucee-cache`. This will prefix automatically EVERY single cache item that goes into Redis.  This will allow you to avoid collisions if you decide to register many Lucee caches or just to distinguish what comes from which cache connection.
+The default key prefix is `lucee-cache`. This will automatically prefix EVERY single cache item that goes into Redis.  This will allow you to avoid collisions if you decide to register many Lucee caches or just to distinguish what comes from which cache connection.
 
 #### Cache Key Case Sensitivity
 
@@ -81,7 +81,7 @@ Check the `Storage` box if you want to be able to use this cache for session or 
 
 #### Host(s)
 
-Enter a comma-delimited list of all the IPs or hosts in the cluster.  Not all are needed, but at least some to have redundancy.
+Enter a comma-delimited list of all the IPs or hosts in the cluster.  Not all are needed, but you should at least enter some to have redundancy.
 
 #### Port
 
@@ -97,7 +97,7 @@ The maximum number of connection attempts to make to the cluster.
 
 #### Cache Key Prefix
 
-The default key prefix is `lucee-cache`. This will prefix automatically EVERY single cache item that goes into Redis.  This will allow you to avoid collisions if you decide to register many Lucee caches or just to distinguish what comes from which cache connection.
+The default key prefix is `lucee-cache`. This will automatically prefix EVERY single cache item that goes into Redis.  This will allow you to avoid collisions if you decide to register many Lucee caches or just to distinguish what comes from which cache connection.
 
 #### Cache Key Case Sensitivity
 
