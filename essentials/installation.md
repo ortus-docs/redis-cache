@@ -2,7 +2,7 @@
 
 ## Redis Setup <a href="#redis-setup" id="redis-setup"></a>
 
-You will need to install a [Redis Server](https://redis.io) separately. Your Redis cluster can be a single node, or multiple nodes. The nodes can be installed along side your web servers, or on a server farm of their own-- it's entirely up to you. You can also use [docker](https://www.docker.com) to spin up a Redis instance. You can use the following docker compose file for quick testing:
+You will need to install a [Redis Server](https://redis.io) separately. Your Redis cluster can be a single node, or multiple nodes. The nodes can be installed along side your web servers, or on a server farm of their own-- it's entirely up to you. You can also use [Docker](https://www.docker.com) to spin up a Redis instance. You can use the following Docker compose file for quick testing:
 
 ```yaml
 version: '3'
@@ -27,7 +27,7 @@ services:
 ```
 
 {% hint style="info" %}
-This will spin up using Docker a standalone redis instance, a redis cluster, and redis insight for database inspection.
+Using Docker, this will spin up a standalone Redis instance, a Redis cluster, and Redis insight for database inspection.
 {% endhint %}
 
 ## Lucee Setup
@@ -40,7 +40,7 @@ If installed in the server context, you can create server-level caches that are 
 
 ### **ForgeBox Extension Provider**
 
-In your Lucee Administrator under `Extension > Providers` paste in your Ortus provider URL ([https://www.forgebox.io](https://www.forgebox.io)) and click `save`. One added, the new provider URL should show up in the list as verified.
+In your Lucee Administrator under `Extension > Providers` paste in your Ortus provider URL ([https://www.forgebox.io](https://www.forgebox.io)) and click `save`. Once added, the new provider URL should show up in the list as verified.
 
 ### **Installing the Extension**
 
@@ -67,14 +67,14 @@ Once the extension installs, you will now see a new menu item in the admin calle
 If you do not see the menu, please do a complete restart of your Lucee Server.
 {% endhint %}
 
-You will also have to determine the type of server you are installing the extension too. Development or non-public facing servers are FREE of charge and by default receive up to 4 activations.
+You will also have to determine the type of server you are installing the extension to. Development or non-public facing servers are FREE of charge and by default receive up to 4 activations.
 
-Production servers get only 1 activation, so make sure you choose the right server type. Once you get all your information in the form then click on the `activate` button to finalize the installation. Choose the trial option if you don't have a license and just want to try out the extension. When the trial expires, the cache provider will stop working! **The trial is not for production use**.
+Production servers get only 1 activation, so make sure you choose the correct server type. Once you get all your information in the form, click on the `activate` button to finalize the installation. Choose the trial option if you don't have a license and just want to try out the extension. When the trial expires, the cache provider will stop working! **The trial is not for production use**.
 
 ![](<../.gitbook/assets/image (4) (1).png>)
 
 {% hint style="warning" %}
-&#x20;Development and staging servers are FREE of charge and each license includes up to 4 activations. Production licenses are on a per Lucee instance and are allowed 1 activation. If you have any activation issues please contact us at [support@ortussolutions.com](mailto:support@ortussolutions.com). Also, make sure you have a valid internet connection in order to activate your product.\
+&#x20;Development and staging servers are FREE of charge and each license includes up to 4 activations. Production licenses are on a per Lucee instance and are allowed 1 activation. If you have any activation issues, please contact us at [support@ortussolutions.com](mailto:support@ortussolutions.com). Also, make sure you have a valid internet connection in order to activate your product.\
 
 {% endhint %}
 
@@ -86,22 +86,22 @@ The Ortus Lucee Redis Extension should now be installed on your server and ready
 
 ### Downloading The Extension
 
-If you will be using an offline installation or a docker based installation, you can either follow the process above or download the extension and leverage a continuous integration server to build your images or server configurations.
+If you will be using an offline installation or a Docker based installation, you can either follow the process above or download the extension and leverage a continuous integration server to build your images or server configurations.
 
 [https://downloads.ortussolutions.com/#/ortussolutions/lucee-extensions/ortus-redis-cache/](https://downloads.ortussolutions.com/#/ortussolutions/lucee-extensions/ortus-redis-cache/)
 
-From our artifact repository download the appropriate `lex` file and drop it into your lucee deploy folder: `{lucee-server}/WEB-INF/lucee-server/deploy`. Once the engine starts, it will deploy the extension for you automatically.
+From our artifact repository, download the appropriate `lex` file and drop it into your Lucee deploy folder: `{lucee-server}/WEB-INF/lucee-server/deploy`. Once the engine starts, it will deploy the extension for you automatically.
 
 #### Automatic Activation <a href="#automatic-activation" id="automatic-activation"></a>
 
-If you will be using Kubernetes, Docker Swarm or any other orchestrator, most likely you want the server warmed up and ready to go. Once you do the deploy extension from the previous section you will create a `properties` file that will indicate your extension's activation code.
+If you will be using Kubernetes, Docker Swarm or any other orchestrator, you will most likely want the server warmed up and ready to go. Once you do the deploy extension from the previous section, you will create a `properties` file that will indicate your extension's activation code.
 
 To get your activation code, please contact Ortus Solutions via the [helpdesk](https://ortussolutions.atlassian.net/servicedesk/customer/portal/9) or via email at [support@ortussolutions.com](mailto:support@ortussolutions.com)
 
 Create a `license.properties` file with the following content:
 
 ```bash
-email=youremail@.com
+email=youremail@yourdomain.com
 licenseKey=your key
 activationCode=your activation code
 serverType=Production
