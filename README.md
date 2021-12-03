@@ -2,7 +2,7 @@
 description: >-
   The Ortus Redis Extension is a native Lucee Extension that allows your CFML
   server to connect to a Redis or a Redis Cluster and leverage it for built-in
-  caching, session storage, Pub/Sub Messaging, an
+  caching, session storage, Pub/Sub Messaging, and document storage.
 ---
 
 # Introduction
