@@ -9,7 +9,7 @@ This serves several purposes:
 * User sessions can be shared across web servers (**No more sticky sessions**)
 * Redis cluster can be scaled out to handle whatever amount of users you need in a distributed fashion
 
-This means you could take your single-server application with a heavy dependence on session/client variables, and scale it out to as many web servers as necessary behind a round-robin load balancer. Users are free to roam to any web server they want, and their session variables will follow them anywhere with no extra overhead. Perhaps you have Millions of web site visitors and you're running out of heap space due to all the session storage. Push those sessions off to a distributed Redis layer that can scale out to meet demand, and that is no longer a bottleneck.
+This means you could take your single-server application with a heavy dependence on session/client variables, and scale it out to as many web servers as necessary behind a round-robin load balancer. Users are free to roam to any web server they want, and their session variables will follow them anywhere with no extra overhead. Perhaps you have millions of web site visitors and you're running out of heap space due to all the session storage. Push those sessions off to a distributed Redis layer that can scale out to meet demand, and that is no longer a bottleneck.
 
 ### Storage Option
 
@@ -23,7 +23,7 @@ Set a cache as usable for `session` or `client` storage
 
 Once the cache is created, enabling session storage is easy. In your Application.cfc simply confirm `sessionManagment` is turned on and set the following two settings as well in the `this` scope:
 
-* `sessionType` : This is the type of sessions to use, valid values are `cfml` and `j2ee`. Make sure that you select `cfml` or the extension will NOT work.
+* `sessionType` : This is the type of session to use, valid values are `cfml` and `j2ee`. Make sure that you select `cfml` or the extension will NOT work.
 * `sessionStorage` : This is the name of the cache defined in your Lucee administrator that you wish to store sessions in
 * `sessionCluster` : This controls how/when session data is sent and retrieved from the cache.&#x20;
   * `true`: Session data is primarily stored in cache. It is always pulled from the cache at the start of each request, and backed up at the end. Use this setting if you have multiple applications using cached storage and you want the full benefit of distributed sessions.
