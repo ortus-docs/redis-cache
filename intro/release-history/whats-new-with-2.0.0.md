@@ -8,7 +8,7 @@ Version 2 is a major rewrite of our Java Extension.  You can find the release no
 
 ![Cluster Support](<../../.gitbook/assets/Screen Shot 2021-11-19 at 10.27.51 AM (1).png>)
 
-We have added the capability to connect to not only standalone Redis instances via our `Redis Cache` connector, but we have introduced now the `Redis Cluster Cache` connector.  This connector can connect to any Redis Cluster and give you all the great features our extension gives.
+We have added the capability to connect to not only standalone Redis instances via our `Redis Cache` connector, but we have now introduced the `Redis Cluster Cache` connector.  This connector can connect to any Redis Cluster and give you all the great features our extension gives.
 
 ![Cluster Configuration](<../../.gitbook/assets/Screen Shot 2021-11-19 at 10.34.04 AM.png>)
 
@@ -33,7 +33,7 @@ Documentation
 
 #### What is Pub/Sub?
 
-> Redis Pub/Sub implement the Publish/Subscribe messaging paradigm. This decoupling of publishers and subscribers can allow for greater scalability and a more dynamic network topology.
+> Redis Pub/Sub implements the Publish/Subscribe messaging paradigm. This decoupling of publishers and subscribers can allow for greater scalability and a more dynamic network topology.
 
 1. Subscribers express interest in one or more channels (literal channels or pattern channels).
 2. Publishers send messages into channels.
@@ -45,7 +45,7 @@ In order to leverage this pattern you will use the following two functions:
 
 | Function                                            | Description                                                                  |
 | --------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `RedisPublish( channel, message, cacheName )`       | Publish a message into redis into a specific channel.                        |
+| `RedisPublish( channel, message, cacheName )`       | Publish a message into Redis into a specific channel.                        |
 | `RedisSubscribe( subscriber, channels, cacheName )` | Subscribe to a channel for messages using a closure/lambda or a listener CFC |
 
 #### Publish Example
@@ -116,7 +116,7 @@ We have completely refactored our internal Java code to include code quality met
 
 ### Better Exception Handling
 
-Dealing with exceptions is always nasty.  However, in this release we have optimized all exceptions so better debugging is added and we can pin point bugs and improvements.
+Dealing with exceptions is always nasty.  However, in this release we have optimized all exceptions so better debugging is added and we can pinpoint bugs and improvements.
 
 ## Release Notes
 
@@ -135,8 +135,8 @@ Dealing with exceptions is always nasty.  However, in this release we have optim
 * [LRE-37](https://ortussolutions.atlassian.net/browse/LRE-37) New UDF redisGetClusterNodes() to get a map of cluster node objects
 * [LRE-36](https://ortussolutions.atlassian.net/browse/LRE-36) Redis Cluster protocol support (RedisCluster, Sentinel, AWS, DigitalOcean)
 * [LRE-33](https://ortussolutions.atlassian.net/browse/LRE-33) Redis publish and subscribe features
-* [LRE-31](https://ortussolutions.atlassian.net/browse/LRE-31) New native cfml function: redisGetCluster() to get access to the native redis cluster manager
+* [LRE-31](https://ortussolutions.atlassian.net/browse/LRE-31) New native cfml function: redisGetCluster() to get access to the native Redis cluster manager
 * [LRE-30](https://ortussolutions.atlassian.net/browse/LRE-30) Improve all exception handling to show exception messages
 * [LRE-29](https://ortussolutions.atlassian.net/browse/LRE-29) Creation of a base class to share between cache implementations
-* [LRE-28](https://ortussolutions.atlassian.net/browse/LRE-28) Add docker redis cluster support
+* [LRE-28](https://ortussolutions.atlassian.net/browse/LRE-28) Add Docker Redis cluster support
 * [LRE-25](https://ortussolutions.atlassian.net/browse/LRE-25) Allow for a new setting to allow for case-sensitive mode instead of case-insensitive mode (default)
