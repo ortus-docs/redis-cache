@@ -10,7 +10,7 @@ We have introduced the capability for your CFML code to now leverage Redis Publi
 Documentation
 {% endembed %}
 
-> Redis Pub/Sub implement the Publish/Subscribe messaging paradigm. This decoupling of publishers and subscribers can allow for greater scalability and a more dynamic network topology.
+> Redis Pub/Sub implements the Publish/Subscribe messaging paradigm. This decoupling of publishers and subscribers can allow for greater scalability and a more dynamic network topology.
 
 1. Subscribers express interest in one or more channels (literal channels or pattern channels).
 2. Publishers send messages into channels.
@@ -22,7 +22,7 @@ In order to leverage this pattern you will use the following two functions:
 
 | Function                                            | Description                                                                                                                  |
 | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `RedisPublish( channel, message, cacheName )`       | Publish a message into redis into a specific channel. Returns how many subscribers are listening to the message and channel. |
+| `RedisPublish( channel, message, cacheName )`       | Publish a message into Redis into a specific channel. Returns how many subscribers are listening to the message and channel. |
 | `RedisSubscribe( subscriber, channels, cacheName )` | Subscribe to a channel for messages using a closure/lambda or a listener CFC.  Returns a `future` and a `subscriber.`        |
 
 {% hint style="warning" %}
@@ -43,7 +43,7 @@ Pattern publishing and subscriptions are still not developed yet.
 <h2>Finished publishing messages</h2>
 ```
 
-The return of the `redisPublish()` function is a numeric indicating how many subscribers received the message.
+The return of the `redisPublish()` function is numeric indicating how many subscribers received the message.
 
 ### Subscribe Example
 
@@ -63,7 +63,7 @@ cfcSubscriber = redisSubscribe( new Subscriber(), "test-channel" );
 
 The `redisSubscribe()` function returns a struct with two keys in it:
 
-* `future` - A completable future that is running your subscriber on.
+* `future` - A completable future that is running your subscriber.
 * `subscriber` - The Java Redis subscriber object you can use to inspect the subscription or unsubscribe from the calls via the `unsubscribe()` method.
 
 ### Subscriber Listener CFC
