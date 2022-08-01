@@ -2,9 +2,9 @@
 
 ## What is Pub/Sub?
 
-![https://dingyuliang.me/wp-content/uploads/2018/02/redis-pubsub-768x407.png](../.gitbook/assets/image.png)
+![https://dingyuliang.me/wp-content/uploads/2018/02/redis-pubsub-768x407.png](<../.gitbook/assets/image (1).png>)
 
-We have introduced the capability for your CFML code to now leverage Redis Publish and Subscribe constructs.  This will allow your CFML code to have native messaging via Redis.
+We have introduced the capability for your CFML code to now leverage Redis Publish and Subscribe constructs. This will allow your CFML code to have native messaging via Redis.
 
 {% embed url="https://redis.io/topics/pubsub" %}
 Documentation
@@ -23,7 +23,7 @@ In order to leverage this pattern you will use the following two functions:
 | Function                                            | Description                                                                                                                  |
 | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | `RedisPublish( channel, message, cacheName )`       | Publish a message into Redis into a specific channel. Returns how many subscribers are listening to the message and channel. |
-| `RedisSubscribe( subscriber, channels, cacheName )` | Subscribe to a channel for messages using a closure/lambda or a listener CFC.  Returns a `future` and a `subscriber.`        |
+| `RedisSubscribe( subscriber, channels, cacheName )` | Subscribe to a channel for messages using a closure/lambda or a listener CFC. Returns a `future` and a `subscriber.`         |
 
 {% hint style="warning" %}
 Pattern publishing and subscriptions are still not developed yet.

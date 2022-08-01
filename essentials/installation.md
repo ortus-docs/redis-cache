@@ -23,7 +23,6 @@ services:
       - 7000-7005:7000-7005
     environment:
       - IP=0.0.0.0
-
 ```
 
 {% hint style="info" %}
@@ -34,7 +33,7 @@ Using Docker, this will spin up a standalone Redis instance, a Redis cluster, an
 
 The Redis extension is installed as a Lucee extension into any Lucee Server version `5.1.0` and above. The extension has to be installed at the **server level context**.
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 If installed in the server context, you can create server-level caches that are available to all web contexts in Lucee. The driver will also be available to all web contexts to add their own local caches or override caches if they need to.
 
@@ -48,8 +47,7 @@ Now click `Extensions > Applications` and wait for the list to load. There shoul
 
 ![](<../.gitbook/assets/image (5) (1).png>)
 
-Click it and then click the `install` button to begin the installation process.\
-
+Click it and then click the `install` button to begin the installation process.\\
 
 {% hint style="danger" %}
 We recommend a complete server install so changes can take effect.
@@ -74,8 +72,7 @@ Production servers get only 1 activation, so make sure you choose the correct se
 ![](<../.gitbook/assets/image (4) (1).png>)
 
 {% hint style="warning" %}
-&#x20;Development and staging servers are FREE of charge and each license includes up to 4 activations. Production licenses are on a per Lucee instance and are allowed 1 activation. If you have any activation issues, please contact us at [support@ortussolutions.com](mailto:support@ortussolutions.com). Also, make sure you have a valid internet connection in order to activate your product.\
-
+Development and staging servers are FREE of charge and each license includes up to 4 activations. Production licenses are on a per Lucee instance and are allowed 1 activation. If you have any activation issues, please contact us at [support@ortussolutions.com](mailto:support@ortussolutions.com). Also, make sure you have a valid internet connection in order to activate your product.\\
 {% endhint %}
 
 The Ortus Lucee Redis Extension should now be installed on your server and ready to use.

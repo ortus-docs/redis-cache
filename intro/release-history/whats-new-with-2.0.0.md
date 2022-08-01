@@ -1,14 +1,22 @@
 # What's New With 2.0.0
 
-Version 2 is a major rewrite of our Java Extension.  You can find the release notes and the major areas of improvement here.
+Version 2 is a major rewrite of our Java Extension. You can find the release notes and the major areas of improvement here.
 
 ## Major Updates
+
+### Redis Logical Database Support
+
+By default Redis supports the concept of logical [databases](https://redis.io/commands/select/).  In our previous extension you could only connect to **database 0**, which is the default database.  This meant that all cache connections had to connect to this database and add a prefix key per connection to avoid collisions.
+
+Now, you can add which logical database to connect to and partition your installation by logical database rather than by prefix.  Thus, providing great separation of concerns for your connections and applications.  On your cache connection details for the Redis Cache, just select which database number to connect to.  That's it!
+
+![](../../.gitbook/assets/image.png)
 
 ### Redis Cluster Support
 
 ![Cluster Support](<../../.gitbook/assets/Screen Shot 2021-11-19 at 10.27.51 AM (1).png>)
 
-We have added the capability to connect to not only standalone Redis instances via our `Redis Cache` connector, but we have now introduced the `Redis Cluster Cache` connector.  This connector can connect to any Redis Cluster and give you all the great features our extension gives.
+We have added the capability to connect to not only standalone Redis instances via our `Redis Cache` connector, but we have now introduced the `Redis Cluster Cache` connector. This connector can connect to any Redis Cluster and give you all the great features our extension gives.
 
 ![Cluster Configuration](<../../.gitbook/assets/Screen Shot 2021-11-19 at 10.34.04 AM.png>)
 
@@ -23,9 +31,9 @@ We have also introduced several new functions for usage in a cluster cache:
 
 ### Redis Pub/Sub
 
-![https://dingyuliang.me/wp-content/uploads/2018/02/redis-pubsub-768x407.png](../../.gitbook/assets/image.png)
+![https://dingyuliang.me/wp-content/uploads/2018/02/redis-pubsub-768x407.png](<../../.gitbook/assets/image (1).png>)
 
-We have introduced the capability for your CFML code to now leverage Redis Publish and Subscribe constructs.  This will allow your CFML code to have native messaging via Redis.
+We have introduced the capability for your CFML code to now leverage Redis Publish and Subscribe constructs. This will allow your CFML code to have native messaging via Redis.
 
 {% embed url="https://redis.io/topics/pubsub" %}
 Documentation
@@ -116,7 +124,7 @@ We have completely refactored our internal Java code to include code quality met
 
 ### Better Exception Handling
 
-Dealing with exceptions is always nasty.  However, in this release we have optimized all exceptions so better debugging is added and we can pinpoint bugs and improvements.
+Dealing with exceptions is always nasty. However, in this release we have optimized all exceptions so better debugging is added and we can pinpoint bugs and improvements.
 
 ## Release Notes
 
@@ -128,15 +136,16 @@ Dealing with exceptions is always nasty.  However, in this release we have optim
 
 ### Added
 
-* [LRE-27](https://ortussolutions.atlassian.net/browse/LRE-27) Update Jedis to 2.9.3
+* [LRE-41](https://ortussolutions.atlassian.net/browse/LRE-41) Ability to choose which database to connect to in Redis, apart from 0 being the default
 * [LRE-40](https://ortussolutions.atlassian.net/browse/LRE-40) Migration of docs to gitbook
 * [LRE-39](https://ortussolutions.atlassian.net/browse/LRE-39) New redisSubscribe() so you can subscribe with closures/lambdas or CFCs to listen to Redis messages
 * [LRE-38](https://ortussolutions.atlassian.net/browse/LRE-38) New redisPublish() UDF so you can publish messages into the Redis cluster
 * [LRE-37](https://ortussolutions.atlassian.net/browse/LRE-37) New UDF redisGetClusterNodes() to get a map of cluster node objects
 * [LRE-36](https://ortussolutions.atlassian.net/browse/LRE-36) Redis Cluster protocol support (RedisCluster, Sentinel, AWS, DigitalOcean)
 * [LRE-33](https://ortussolutions.atlassian.net/browse/LRE-33) Redis publish and subscribe features
-* [LRE-31](https://ortussolutions.atlassian.net/browse/LRE-31) New native cfml function: redisGetCluster() to get access to the native Redis cluster manager
+* [LRE-31](https://ortussolutions.atlassian.net/browse/LRE-31) New native cfml function: `redisGetCluster()` to get access to the native redis cluster manager
 * [LRE-30](https://ortussolutions.atlassian.net/browse/LRE-30) Improve all exception handling to show exception messages
 * [LRE-29](https://ortussolutions.atlassian.net/browse/LRE-29) Creation of a base class to share between cache implementations
-* [LRE-28](https://ortussolutions.atlassian.net/browse/LRE-28) Add Docker Redis cluster support
+* [LRE-28](https://ortussolutions.atlassian.net/browse/LRE-28) Add docker redis cluster support
+* [LRE-27](https://ortussolutions.atlassian.net/browse/LRE-27) Update Jedis to 2.9.3
 * [LRE-25](https://ortussolutions.atlassian.net/browse/LRE-25) Allow for a new setting to allow for case-sensitive mode instead of case-insensitive mode (default)

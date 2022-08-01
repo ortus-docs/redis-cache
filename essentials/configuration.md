@@ -15,25 +15,29 @@ You have two cache options with our extension:
 * **Ortus Redis Cache** : For standalone or connecting to a single Redis instance
 * **Ortus Redis Cluster Cache** : For connecting to a Redis Cluster
 
-You will then be taken to a page of options for each of the Redis Cache implementations.&#x20;
+You will then be taken to a page of options for each of the Redis Cache implementations.
 
 ### RedisCache
 
-![RedisCache](<../.gitbook/assets/image (6).png>)
+![](../.gitbook/assets/image.png)
 
-The `RedisCache` is used for connecting to a single instance of Redis.  That instance could be replicated, but that's another story.  Let's check out the different options:
+The `RedisCache` is used for connecting to a single instance of Redis. That instance could be replicated, but that's another story. Let's check out the different options:
 
 #### Storage
 
-Check the `Storage` box if you want to be able to use this cache for session or client storage distribution.&#x20;
+Check the `Storage` box if you want to be able to use this cache for session or client storage distribution.
 
 #### Host
 
-Enter the Redis server IP address or host name.&#x20;
+Enter the Redis server IP address or host name.
 
 #### Port
 
 The port of the Redis server.
+
+#### Logical Database
+
+The logical database to connect to in Redis. By default we connect to database 0.
 
 #### Password
 
@@ -57,15 +61,15 @@ The maximum number of idle connections to keep in the pool to the Redis server
 
 #### Cache Key Prefix
 
-The default key prefix is `lucee-cache`. This will automatically prefix EVERY single cache item that goes into Redis.  This will allow you to avoid collisions if you decide to register many Lucee caches or just to distinguish what comes from which cache connection.
+The default key prefix is `lucee-cache`. This will automatically prefix EVERY single cache item that goes into Redis. This will allow you to avoid collisions if you decide to register many Lucee caches or just to distinguish what comes from which cache connection.
 
 #### Cache Key Case Sensitivity
 
-By default all cache keys are transformed to lowercase to avoid any casing issues.  However, if you want case sensitivity, then turn this option on.
+By default all cache keys are transformed to lowercase to avoid any casing issues. However, if you want case sensitivity, then turn this option on.
 
 #### Default
 
-This is a Lucee feature where you can set the cache connection to be the default for all cache operations in Lucee (cacheGet(), cachePut(), etc).  This can be one of the following or none at all.
+This is a Lucee feature where you can set the cache connection to be the default for all cache operations in Lucee (cacheGet(), cachePut(), etc). This can be one of the following or none at all.
 
 ![](<../.gitbook/assets/image (5).png>)
 
@@ -73,15 +77,15 @@ This is a Lucee feature where you can set the cache connection to be the default
 
 ![RedisClusterCache](<../.gitbook/assets/image (4).png>)
 
-The `RedisClusterCache` is used for connecting to a cluster of Redis instances. This can be using Sentinel, or vanilla clustering or Redis Enterprise or Redis AWS/DigitalOcean.  Let's check out the different options:
+The `RedisClusterCache` is used for connecting to a cluster of Redis instances. This can be using Sentinel, or vanilla clustering or Redis Enterprise or Redis AWS/DigitalOcean. Let's check out the different options:
 
 #### Storage
 
-Check the `Storage` box if you want to be able to use this cache for session or client storage distribution.&#x20;
+Check the `Storage` box if you want to be able to use this cache for session or client storage distribution.
 
 #### Host(s)
 
-Enter a comma-delimited list of all the IPs or hosts in the cluster.  Not all are needed, but you should at least enter some to have redundancy.
+Enter a comma-delimited list of all the IPs or hosts in the cluster. Not all are needed, but you should at least enter some to have redundancy.
 
 #### Port
 
@@ -97,22 +101,21 @@ The maximum number of connection attempts to make to the cluster.
 
 #### Cache Key Prefix
 
-The default key prefix is `lucee-cache`. This will automatically prefix EVERY single cache item that goes into Redis.  This will allow you to avoid collisions if you decide to register many Lucee caches or just to distinguish what comes from which cache connection.
+The default key prefix is `lucee-cache`. This will automatically prefix EVERY single cache item that goes into Redis. This will allow you to avoid collisions if you decide to register many Lucee caches or just to distinguish what comes from which cache connection.
 
 #### Cache Key Case Sensitivity
 
-By default all cache keys are transformed to lowercase to avoid any casing issues.  However, if you want case sensitivity, then turn this option on.
+By default all cache keys are transformed to lowercase to avoid any casing issues. However, if you want case sensitivity, then turn this option on.
 
 #### Default
 
-This is a Lucee feature where you can set the cache connection to be the default for all cache operations in Lucee (cacheGet(), cachePut(), etc).  This can be one of the following or none at all.
+This is a Lucee feature where you can set the cache connection to be the default for all cache operations in Lucee (cacheGet(), cachePut(), etc). This can be one of the following or none at all.
 
-![](<../.gitbook/assets/image (5).png>)\
-
+![](<../.gitbook/assets/image (5).png>)\\
 
 ## Application.cfc Connections
 
-You can also add cache connections via your `Application.cfc` and avoid using the admin.  Just open your `Application.cfc` and create a section under the pseudo-constructor (before the first function)
+You can also add cache connections via your `Application.cfc` and avoid using the admin. Just open your `Application.cfc` and create a section under the pseudo-constructor (before the first function)
 
 ### RedisCache
 
@@ -124,6 +127,7 @@ this.cache.connections["sessions"] = {
 		"host":"127.0.0.1",
 		"port":"6379"
 		"password":"",
+		"database" : "0",
 		"useSSL": false,
 		"timeout" : 2000,
 		"maxConnections": 1000,
@@ -196,4 +200,3 @@ You can also leverage a `cfconfig.json` file to store the cache configurations a
 ```
 
 Please refer to the previous section to find out about what the custom options mean.
-
