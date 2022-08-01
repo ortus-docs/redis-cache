@@ -2,7 +2,11 @@
 description: >-
   The Ortus Redis Extension is a native Lucee Extension that allows your CFML
   server to connect to a Redis or a Redis Cluster and leverage it for built-in
-  caching, session storage, Pub/Sub Messaging, and document storage.
+  caching, session storage, Pub/Sub Messaging, an
+cover: >-
+  https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxfHxzZXJ2ZXJzfGVufDB8fHx8MTY1OTM5MTc3Mg&ixlib=rb-1.2.1&q=80
+coverY: 0
+layout: landing
 ---
 
 # Introduction
@@ -22,7 +26,7 @@ The [Ortus Redis Extension](https://www.ortussolutions.com/products/redis-lucee)
 
 ### Commercial Product
 
-This Lucee extension is a commercial product by Ortus Solutions.  You will need to purchase a license: [https://www.ortussolutions.com/products/redis-lucee](https://www.ortussolutions.com/products/redis-lucee).
+This Lucee extension is a commercial product by Ortus Solutions. You will need to purchase a license: [https://www.ortussolutions.com/products/redis-lucee](https://www.ortussolutions.com/products/redis-lucee).
 
 ### Features In A Nutshell
 
@@ -52,7 +56,7 @@ This Lucee extension is a commercial product by Ortus Solutions.  You will need 
 
 ### Support
 
-The Ortus Redis Extension is a commercial product by Ortus Solutions. If you have purchased a license then you are entitled to customer support.  You can either visit our support page to contact us or create an issue in our bug tracker.
+The Ortus Redis Extension is a commercial product by Ortus Solutions. If you have purchased a license then you are entitled to customer support. You can either visit our support page to contact us or create an issue in our bug tracker.
 
 * Support Page: [https://www.ortussolutions.com/services/support](https://www.ortussolutions.com/services/support)
 * Bug Tracker: [https://ortussolutions.atlassian.net/browse/LRE](https://ortussolutions.atlassian.net/browse/LRE)
