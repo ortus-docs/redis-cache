@@ -1,3 +1,7 @@
+---
+description: Use Redis from CFML natively
+---
+
 # CFML
 
 The first and easiest way to use your new cache is via the built-in cache functions and tags in CFML. You can specify the cache name to use, but by default Lucee will use the cache you have designated as your default `object` cache.

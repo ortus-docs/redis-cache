@@ -1,4 +1,8 @@
-# Pub/Sub
+---
+description: Use Redis as a complete real-time messaging broker
+---
+
+# Publish/Subscribe
 
 ## What is Pub/Sub?
 

@@ -1,3 +1,7 @@
+---
+description: Getting started with the Ortus Redis Extension
+---
+
 # Installation
 
 ## Redis Setup <a href="#redis-setup" id="redis-setup"></a>
@@ -18,16 +22,23 @@ services:
       - 8001:8001
 
   redis_cluster:
-    image: grokzen/redis-cluster:latest
+    image: grokzen/redis-cluster:6.2.0
     ports:
-      - 7000-7005:7000-7005
+      - 8002-8007:7000-7005
     environment:
       - IP=0.0.0.0
+
 ```
 
 {% hint style="info" %}
 Using Docker, this will spin up a standalone Redis instance, a Redis cluster, and Redis insight for database inspection.
 {% endhint %}
+
+[Redis Insight](https://redis.com/redis-enterprise/redis-insight/) is a great product that it will give you full insights into your running Redis server or cluster.  It will help you analyze issues, inspect keys, values and much more.  Just navigate to the assigned port (8001) and start inspecting!
+
+![Redis Insight](<../.gitbook/assets/image (3).png>)
+
+{% embed url="https://redis.com/redis-enterprise/redis-insight/" %}
 
 ## Lucee Setup
 
@@ -35,11 +46,15 @@ The Redis extension is installed as a Lucee extension into any Lucee Server vers
 
 ![](<../.gitbook/assets/image (1) (1).png>)
 
-If installed in the server context, you can create server-level caches that are available to all web contexts in Lucee. The driver will also be available to all web contexts to add their own local caches or override caches if they need to.
+If installed in the server context, you can create server-level caches that are available to all web contexts in Lucee. The driver will also be available to all web contexts to add their own local caches or override caches if they need too as well.
 
 ### **ForgeBox Extension Provider**
 
-In your Lucee Administrator under `Extension > Providers` paste in your Ortus provider URL ([https://www.forgebox.io](https://www.forgebox.io)) and click `save`. Once added, the new provider URL should show up in the list as verified.
+In your Lucee Administrator under `Extension > Providers` paste in your Ortus provider URL ([https://www.forgebox.io](https://www.forgebox.io)) and click `save`. Once added, the new provider URL should show up in the list as verified.&#x20;
+
+{% hint style="warning" %}
+Lucee has added ForgeBox as an extension provider as core to the project, so you might not need to do this step.
+{% endhint %}
 
 ### **Installing the Extension**
 
@@ -47,13 +62,29 @@ Now click `Extensions > Applications` and wait for the list to load. There shoul
 
 ![](<../.gitbook/assets/image (5) (1).png>)
 
-Click it and then click the `install` button to begin the installation process.\\
+Click it and then click the `install` button to begin the installation process.
 
 {% hint style="danger" %}
 We recommend a complete server install so changes can take effect.
 {% endhint %}
 
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (3) (1).png>)
+
+#### Manual/Docker Installation
+
+Lucee also allows you to deploy the extension file (.lex) into a special folder.  Lucee will detect the extension and automatically install it for you.  The location is the following
+
+```
+{lucee-server}/WEB-INF/lucee-server/deploy
+```
+
+Just drop the [ortus-redis-cache-2.0.0.lex](https://s3.amazonaws.com/downloads.ortussolutions.com/ortussolutions/lucee-extensions/ortus-redis-cache/2.0.0/ortus-redis-cache-2.0.0.lex) file in that folder, wait a few seconds and it will automatically install. You can drop the file there before the server is started or during a started server.
+
+If anything goes wrong during the installation please verify the deploy logs in the following location
+
+```
+{lucee-server}/WEB-INF/lucee-server/context/logs/deploy.log
+```
 
 ### **Activating the Extension**
 

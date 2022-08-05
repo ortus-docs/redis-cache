@@ -1,3 +1,7 @@
+---
+description: Learn how to configure the extension for operation
+---
+
 # Configuration
 
 Once the extension is installed, you can begin to create cache connections and configure them either via the administrator, via the Application.cfc or via a CFConfig json file.

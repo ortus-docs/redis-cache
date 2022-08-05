@@ -1,3 +1,7 @@
+---
+description: Issues? We all have them, learn how to cope with them
+---
+
 # Debugging
 
 Here's a general list of troubleshooting steps if you're getting errors. The log files are VERY important since the error Lucee throws doesn't always contain the information you need. You will have to crack open your Lucee logs to get the actual error out.

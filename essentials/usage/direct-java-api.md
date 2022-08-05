@@ -1,3 +1,7 @@
+---
+description: Go funky with the Redis extension
+---
+
 # Direct Java API
 
 If you need more power or are familiar with the Redis Java API and want to use some features we haven't implemented yet, first [let us know](mailto:support@ortussolutions.com) so we can consider that addition in future version, and then head over to the Java Cluster to get direct access to the Redis Java SDK. Behind the scenes our extension leverages the [Jedis](https://github.com/xetorthio/jedis) library for Redis.

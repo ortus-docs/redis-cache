@@ -17,5 +17,5 @@
   * [RAM Resources](essentials/usage/ram-resources.md)
   * [Scope Storage](essentials/usage/scope-storage.md)
   * [Direct Java API](essentials/usage/direct-java-api.md)
-* [Pub/Sub](essentials/pub-sub.md)
+* [Publish/Subscribe](essentials/pub-sub.md)
 * [Debugging](essentials/debugging.md)

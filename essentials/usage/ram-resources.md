@@ -1,3 +1,7 @@
+---
+description: Use Redis as a virtual file storage
+---
+
 # RAM Resources
 
 Lucee has the concept and feature of virtual file systems. Our extension taps into it by allowing you to leverage the [`ram://`](ram://) resource to talk to Redis for storing documents and treating Redis like a big file system. This means that any `file` or `directory` related tag/function can work with a Redis RAM resource like: `fileRead(), fileWrite(), fileDelete(), directoryNew(), directoryList(), include`, etc. It even works when defining application mappings. You can define Redis to be the default cache for `resources` by selecting the `default` element in the cache details page and pointing it to `resource`.

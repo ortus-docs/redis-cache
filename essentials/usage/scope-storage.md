@@ -1,6 +1,10 @@
+---
+description: Use Redis for session distribution
+---
+
 # Scope Storage
 
-Lucee will allow you to seamlessly defer storage of your **session** and/or **client** scopes to Redis. You will set and access the scopes like you normally would in CFML, but behind the scenes Lucee stores a cache entry for each user containing their session/client variables in the Redis cluster.&#x20;
+Lucee will allow you to seamlessly defer storage of your **session** and/or **client** scopes to Redis. You will set and access the scopes like you normally would in CFML, but behind the scenes Lucee stores a cache entry for each user containing their session/client variables in the Redis cluster.
 
 This serves several purposes:
 
@@ -25,7 +29,7 @@ Once the cache is created, enabling session storage is easy. In your Application
 
 * `sessionType` : This is the type of session to use, valid values are `cfml` and `j2ee`. Make sure that you select `cfml` or the extension will NOT work.
 * `sessionStorage` : This is the name of the cache defined in your Lucee administrator that you wish to store sessions in
-* `sessionCluster` : This controls how/when session data is sent and retrieved from the cache.&#x20;
+* `sessionCluster` : This controls how/when session data is sent and retrieved from the cache.
   * `true`: Session data is primarily stored in cache. It is always pulled from the cache at the start of each request, and backed up at the end. Use this setting if you have multiple applications using cached storage and you want the full benefit of distributed sessions.
   * `false`: Session data is primarily stored in memory but backed up on every request to the cache. Session data is only pulled from the cache if it doesn't exist in memory. Set this to false if you only have one application using session cache storage and you simply want to persist session storage across restarts.
 
@@ -54,7 +58,7 @@ Storing your client scope in Redis is just as easy as session storage. In your A
 
 * `clientStorage`: This is the name of the cache defined in your Lucee administrator that you wish to store client data in
 * `clientCluster`: This controls how/when client data is sent and retrieved from the cache.
-  * `true`: Client data is primarily stored in cache. It is always pulled from the cache at the start of each request, and backed up at the end. Use this setting if you have multiple applications using cached storage and you want the full benefit of distributed client data.&#x20;
+  * `true`: Client data is primarily stored in cache. It is always pulled from the cache at the start of each request, and backed up at the end. Use this setting if you have multiple applications using cached storage and you want the full benefit of distributed client data.
   * `false`: Client data is primarily stored in memory but backed up on every request to the cache. Client data is only pulled from the cache if it doesn't exist in memory. Set this to false if you only have one application using client cache storage and you simply want to persist client storage across restarts.
 
 ```javascript
