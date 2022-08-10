@@ -1,6 +1,6 @@
 ---
 cover: ../../.gitbook/assets/redis-2.0-blog.png
-coverY: 0
+coverY: 16.493523316062166
 ---
 
 # What's New With 2.0.0
