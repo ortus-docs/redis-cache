@@ -12,7 +12,7 @@ coverY: 0
 
 ## Ortus Redis Extension v2.x Docs
 
-![](.gitbook/assets/redis-lucee-logo.png)
+![Ortus Redis Lucee Extension](.gitbook/assets/ortus-redis-extension.png)
 
 The [Ortus Redis Extension](https://www.ortussolutions.com/products/redis-lucee) is a **native** Lucee Extension that allows your CFML server to connect to a Redis server or a Redis Cluster and leverage it for built-in caching, session storage, Pub/Sub Messaging, and document storage.
 

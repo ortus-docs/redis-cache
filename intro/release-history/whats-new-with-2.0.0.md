@@ -1,3 +1,8 @@
+---
+cover: ../../.gitbook/assets/redis-2.0-blog.png
+coverY: 0
+---
+
 # What's New With 2.0.0
 
 Version 2 is a major rewrite of our Java Extension. You can find the release notes and the major areas of improvement here.
