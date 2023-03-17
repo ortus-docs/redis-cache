@@ -114,7 +114,7 @@ The Ortus Lucee Redis Extension should now be installed on your server and ready
 
 ### Downloading The Extension
 
-If you will be using an offline installation or a Docker based installation, you can either follow the process above or download the extension and leverage a continuous integration server to build your images or server configurations.
+If you will be using an offline installation or a Docker based installation, you can either follow the process above or download the extension and leverage a continuous integration server to build your images or server configurations. Please note that you will need a containerized server license to use this extension across multiple images.
 
 [https://downloads.ortussolutions.com/#/ortussolutions/lucee-extensions/ortus-redis-cache/](https://downloads.ortussolutions.com/#/ortussolutions/lucee-extensions/ortus-redis-cache/)
 
@@ -122,19 +122,43 @@ From our artifact repository, download the appropriate `lex` file and drop it in
 
 #### Automatic Activation <a href="#automatic-activation" id="automatic-activation"></a>
 
-If you will be using Kubernetes, Docker Swarm or any other orchestrator, you will most likely want the server warmed up and ready to go. Once you do the deploy extension from the previous section, you will create a `properties` file that will indicate your extension's activation code.
+If you will be using Kubernetes, Docker Swarm or any other orchestrator, you will need to automate the process of activation.  There are two methods of providing your activation information to the extension:
+
+1. Activation via a `properties` file in the extension filesystem
+2. Activation via environment variables
+
+Since you will most likely want the server warmed up and ready to go, you may provide one of these two mechanisms in your build process.  With environment variable-based activation, there is no need to hard-code the license information in to the container build, though you may do so.  Simply supply these environment keys at runtime or via a .env file.
+
+#### Environment Variable License Configuration
+
+The environment variables used in activating the extension are:
+
+* `REDIS_EXTENSION_EMAIL`  - The email address used to purchase your extension
+* `REDIS_EXTENSION_LICENSE_KEY` - The license key you were provided at registration
+* `REDIS_EXTENSION_SERVER_TYPE` - Optional, defaults to `Production`
+* `REDIS_EXTENSION_ACTIVATION_CODE` - The activation code for your extension and server type.  Note that this can only be obtained manually through the Lucee admin, or by contacting our helpdesk.
+
+To get an activation code, outside of the Lucee Admininstrator, please contact Ortus Solutions via the [helpdesk](https://ortussolutions.atlassian.net/servicedesk/customer/portal/9) or via email at [support@ortussolutions.com](mailto:support@ortussolutions.com)\
+\
+If you wish to simply try out the application, you supply only one environment variable, which will activate a free extension trial:
+
+```
+REDIS_EXTENSION_SERVER_TYPE=Trial
+```
 
 To get your activation code, please contact Ortus Solutions via the [helpdesk](https://ortussolutions.atlassian.net/servicedesk/customer/portal/9) or via email at [support@ortussolutions.com](mailto:support@ortussolutions.com)
 
-Create a `license.properties` file with the following content:
+#### Properties File License Configuration
+
+To use the properties file method of license configuration, Create a `license.properties` file with the following content:
 
 ```bash
-email=youremail@yourdomain.com
-licenseKey=your key
-activationCode=your activation code
-serverType=Production
+email=[The email address used to purchase your extension]
+licenseKey=[The license key you were provided at registration]
+activationCode=[The activation code for your extension and server type]
+serverType=[ Activation type. Optional. Default to "Production"] 
 ```
 
 And place it in the following location: `{lucee-server}/WEB-INF/lucee-server/context/context/ortus/redis/license.properties`
 
-That's it!
+Upon server startup, the file will be sourced in and the extension activated.&#x20;
