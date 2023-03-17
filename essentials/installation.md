@@ -24,7 +24,7 @@ services:
   redis_cluster:
     image: grokzen/redis-cluster:6.2.0
     ports:
-      - 8002-8007:7000-7005
+      - 7000-7005:7000-7005
     environment:
       - IP=0.0.0.0
 
