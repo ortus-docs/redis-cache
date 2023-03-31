@@ -79,7 +79,7 @@ This is a Lucee feature where you can set the cache connection to be the default
 
 ### RedisClusterCache
 
-![RedisClusterCache](<../.gitbook/assets/image (4).png>)
+<figure><img src="../.gitbook/assets/Cluster-Cache-Config.jpg" alt=""><figcaption></figcaption></figure>
 
 The `RedisClusterCache` is used for connecting to a cluster of Redis instances. This can be using Sentinel, or vanilla clustering or Redis Enterprise or Redis AWS/DigitalOcean. Let's check out the different options:
 
@@ -95,9 +95,21 @@ Enter a comma-delimited list of all the IPs or hosts in the cluster. Not all are
 
 The port of the Redis cluster.
 
+#### Password
+
+The Redis cluster password
+
 #### Connection Timeout
 
 The time in milliseconds to wait for a connection or throw an exception.
+
+#### Read Timeout
+
+The timeout for a read of data from the cluster - defaults to the connection timeout
+
+#### Max Connections
+
+The  maximum number of connections to the cluster allowed per pool - defaults to 50
 
 #### Max Attempts
 
