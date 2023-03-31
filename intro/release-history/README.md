@@ -6,9 +6,9 @@ description: A collection of all the major releases of this extension
 
 In this section you will find the release notes for each version we release under this major version. If you are looking for the release notes of previous major versions use the version switcher at the top left of this documentation book. Here is a breakdown of our major version releases.
 
-## Version 2.1.0
+## Version 2.1.x
 
-Veersion 2.1.0 Adds support for providing license information via environment variables - elminating the need to see property files to validate licenses
+Veersion 2.1.0 Adds support for providing license information via environment variables - elminating the need to see property files to validate licenses.  It also adds support for password authentication to Cluster connections
 
 ## Version 2.0
 
