@@ -154,8 +154,10 @@ this.cache.connections[ "myClusterCache" ] = {
   custom: {
 	"hosts":"127.0.0.1",
 	"port":"7000",
+	"password":"",
 	"timeout" : 2000,
 	"maxAttempts" : 10,
+	"maxConnections": 1000,
 	"keyprefix":"lucee-cluster",			
 	"cacheKeyCaseSensitivity" : false
 }, 
