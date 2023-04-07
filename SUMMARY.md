@@ -6,6 +6,7 @@
 
 * [Release History](intro/release-history/README.md)
   * [What's New With 2.x](intro/release-history/whats-new-with-2.0.0.md)
+  * [Changelog](intro/release-history/changelog.md)
 * [About This Book](intro/about-this-book.md)
 
 ## Essentials
