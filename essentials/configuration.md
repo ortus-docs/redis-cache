@@ -43,6 +43,10 @@ The port of the Redis server.
 
 The logical database to connect to in Redis. By default we connect to database 0.
 
+#### Username
+
+The Redis cluster username - only used when enabling [user-level access](https://docs.redis.com/latest/rs/security/access-control/manage-users/add-users/).
+
 #### Password
 
 The password of the Redis server, if any.
@@ -95,6 +99,14 @@ Enter a comma-delimited list of all the IPs or hosts in the cluster. Not all are
 
 The port of the Redis cluster.
 
+#### SSL
+
+Whether SSL transport is enabled
+
+#### Username
+
+The Redis cluster username - only used when enabling [user-level access](https://docs.redis.com/latest/rs/security/access-control/manage-users/add-users/).
+
 #### Password
 
 The Redis cluster password
@@ -142,6 +154,7 @@ this.cache.connections["sessions"] = {
   custom: {
 		"host":"127.0.0.1",
 		"port":"6379"
+		"username" : "",
 		"password":"",
 		"database" : "0",
 		"useSSL": false,
@@ -166,7 +179,9 @@ this.cache.connections[ "myClusterCache" ] = {
   custom: {
 	"hosts":"127.0.0.1",
 	"port":"7000",
+	"username" : "",
 	"password":"",
+	"useSSL" : "",
 	"timeout" : 2000,
 	"maxAttempts" : 10,
 	"maxConnections": 1000,
@@ -189,22 +204,33 @@ You can also leverage a `cfconfig.json` file to store the cache configurations a
     "applicationTimeout":"1,0,0,0",
     "cacheDefaultObject":"sessions",
     "caches":{
-        "sessions":{
+        "sessions": {
             "class":"ortus.extension.cache.redis.RedisCache",
             "custom":{
-                "host":"127.0.0.1",
+                "cacheKeyCaseSensitivity":"false",
+                "database" : "0",
+                "idleConnections":"5",
+                "maxConnections":"50",
+		"username":"${REDIS_USERNAME}",
+                "password":"${REDIS_PASSWORD}",
+                "timeout":"2000",
+                "useSSL":"false",
+                "host":"${REDIS_HOST:127.0.0.1}",
                 "keyprefix":"lucee-cache",
-                "port":"6379"
+                "port":"${REDIS_PORT:6379}"
             },
             "readOnly":"false",
             "storage":"true"
         },
-	"rediscluster":{
+	"rediscluster": {
             "class":"ortus.extension.cache.redis.RedisClusterCache",
             "custom":{
-                "hosts":"127.0.0.1",
+                "hosts":"${REDIS_CLUSTER_HOSTS:127.0.0.1}",
                 "keyprefix":"lucee-cluster",
-                "port":"7000"
+                "username" : "${REDIS_CLUSTER_USERNAME}",
+                "password" : "${REDIS_CLUSTER_PASSWORD}",
+                "port":"${REDIS_CLUSTER_PORT:7000}",
+		"useSSL" :"${REDIS_CLUSTER_USE_SSL:false}"
             },
             "readOnly":"false",
             "storage":"true"
