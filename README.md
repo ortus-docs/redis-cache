@@ -9,7 +9,7 @@ coverY: 0
 
 # Introduction
 
-## Ortus Redis Extension v2.x Docs
+## Ortus Redis Extension v3.x Docs
 
 ![Ortus Redis Lucee Extension](.gitbook/assets/ortus-redis-extension.png)
 
