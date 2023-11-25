@@ -23,7 +23,7 @@ You will then be taken to a page of options for each of the Redis Cache implemen
 
 ### RedisCache
 
-![](../.gitbook/assets/image.png)
+<figure><img src="../.gitbook/assets/Single-Cache-Admin.jpg" alt=""><figcaption></figcaption></figure>
 
 The `RedisCache` is used for connecting to a single instance of Redis. That instance could be replicated, but that's another story. Let's check out the different options:
 
@@ -59,6 +59,14 @@ Enable SSL on the connection to the Redis Server.
 
 The time in milliseconds to wait for a connection or throw an exception.
 
+#### Socket Timeout
+
+The cluster connection socket timeout in milliseconds
+
+#### Pool Timeout
+
+The the maximum amount of time, in milliseconds, to wait for a connection pool resource to become available
+
 #### Max Connections
 
 The maximum number of connections to allow to the Redis server.
@@ -83,7 +91,7 @@ This is a Lucee feature where you can set the cache connection to be the default
 
 ### RedisClusterCache
 
-<figure><img src="../.gitbook/assets/Cluster-Cache-Config.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Cluster-Cache-Admin.jpg" alt=""><figcaption></figcaption></figure>
 
 The `RedisClusterCache` is used for connecting to a cluster of Redis instances. This can be using Sentinel, or vanilla clustering or Redis Enterprise or Redis AWS/DigitalOcean. Let's check out the different options:
 
@@ -118,6 +126,14 @@ The time in milliseconds to wait for a connection or throw an exception.
 #### Read Timeout
 
 The timeout for a read of data from the cluster - defaults to the connection timeout
+
+#### Socket Timeout
+
+The cluster connection socket timeout in milliseconds
+
+#### Pool Timeout
+
+The the maximum amount of time, in milliseconds, to wait for a connection pool resource to become available
 
 #### Max Connections
 
@@ -159,6 +175,8 @@ this.cache.connections["sessions"] = {
 		"database" : "0",
 		"useSSL": false,
 		"timeout" : 2000,
+		"socketTimeout" : 2000,
+		"poolWaittimeout" : 1000,
 		"maxConnections": 1000,
 		"idleConnections": 10,
 		"keyprefix":"lucee-cache",
@@ -183,6 +201,9 @@ this.cache.connections[ "myClusterCache" ] = {
 	"password":"",
 	"useSSL" : "",
 	"timeout" : 2000,
+	"readTimeout" : 2000,
+	"socketTimeout" : 2000,
+	"poolWaittimeout" : 1000,
 	"maxAttempts" : 10,
 	"maxConnections": 1000,
 	"keyprefix":"lucee-cluster",			

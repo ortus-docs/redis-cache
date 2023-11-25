@@ -6,7 +6,7 @@ description: All notable changes to this project will be documented in this file
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-***
+
 
 ### \[2.2.1] => 2022-APR-06
 
@@ -63,7 +63,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 * [LRE-27](https://ortussolutions.atlassian.net/browse/LRE-27) Update Jedis to 2.9.3
 * [LRE-25](https://ortussolutions.atlassian.net/browse/LRE-25) Allow for a new setting to allow for case-sensitive mode instead of case-insensitive mode (default)
 
-***
+
 
 ### \[1.4.0] => 2019-NOV-5
 
@@ -79,7 +79,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 * `Bugs`
   * Fixes an issue which caused the extension to fail on Lucee v5.2.9 and v5.3.x
 
-***
+
 
 ### \[1.3.0] => 2019-SEP-30
 
@@ -90,7 +90,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   * Max Connections
   * Max Idle Connections
 
-***
+
 
 ### \[1.2.0] => 2019-MAR-05
 
