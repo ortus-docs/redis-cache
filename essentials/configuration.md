@@ -139,6 +139,14 @@ The the maximum amount of time, in milliseconds, to wait for a connection pool r
 
 The  maximum number of connections to the cluster allowed per pool - defaults to 50
 
+#### Idle Timeout
+
+The max idle time, in milliseconds, for a connection to remain in the pool.
+
+#### Max Idle Connections
+
+The maximum number of concurrently idle connections to retain in the pool
+
 #### Max Attempts
 
 The maximum number of connection attempts to make to the cluster.
@@ -205,7 +213,9 @@ this.cache.connections[ "myClusterCache" ] = {
 	"socketTimeout" : 2000,
 	"poolWaittimeout" : 1000,
 	"maxAttempts" : 10,
-	"maxConnections": 1000,
+	"maxConnections": 1000, 
+	"maxIdleTime" : 30000,
+	"maxIdleConnections" : 20, 
 	"keyprefix":"lucee-cluster",			
 	"cacheKeyCaseSensitivity" : false
 }, 

@@ -18,6 +18,7 @@
 * [Configuration](essentials/configuration.md)
 * [Usage](essentials/usage/README.md)
   * [CFML](essentials/usage/cfml.md)
+  * [Distributed Locking](essentials/usage/distributed-locking.md)
   * [RAM Resources](essentials/usage/ram-resources.md)
   * [Scope Storage](essentials/usage/scope-storage.md)
   * [Direct Java API](essentials/usage/direct-java-api.md)
