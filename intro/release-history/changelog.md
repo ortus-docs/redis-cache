@@ -4,9 +4,97 @@ description: All notable changes to this project will be documented in this file
 
 # Changelog
 
+## Changelog
+
+All notable changes to this project will be documented in this file.
+
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+***
 
+### \[3.5.0] => 2025-JUL-09
+
+#### Added
+
+* Redis v8 Test Coverage and Compatibility
+* Lucee 6 CI Matrix Test Coverage
+
+#### Changed
+
+* [LRE-63](https://ortussolutions.atlassian.net/browse/LRE-63) - Redis Client Library ( Jedis ) to v6.0.0
+
+### \[3.4.1] => 2025-JUN-20
+
+#### Added
+
+* Lucee 6 Compatibility
+
+### \[3.4.0] => 2024-DEC-04
+
+#### Changed
+
+* Redis Client Library ( Jedis ) to v5.2.0
+
+#### Fixed
+
+* Fixes connection release issues with distributed lock and Redis single-node mode
+
+### \[3.3.2] => 2024-DEC-02
+
+#### Fixed
+
+* LRE-62 - Resolve issue where distributed lock connections were not being released
+
+### \[3.3.1] => 2024-APR-03
+
+#### Fixed
+
+* Fixed cluster authentication being lost due to upstream java object close-with-resources behavior
+
+### \[3.3.0] => 2024-FEB-15
+
+#### Added
+
+* Adds `cfredislock` and `redisLock` tags for tag-based and script syntax
+* Adds `maxIdleConnections` and `maxIdleTime` configuration settings for Redis Cluster cache
+* Adds getCache method to `RedisCacheUtils`
+
+#### Fixed
+
+* LRE-57 : Cluster cache commands was not closing the jedis pool on some operations
+
+#### Updated
+
+* Github actions to latest versions
+
+### \[3.2.0] => 2023-NOV-25
+
+#### Added
+
+* Add settings for `poolWaitTimeout` and `socketTimeout` for RedisCache and RedisClusterCache connections
+
+#### Changed
+
+* Redis Client Library ( Jedis ) to v4.4.6
+* Changed default max connections to 100 for initial reliability in HA deployments
+
+### \[3.1.0] => 2023-SEP-11
+
+#### Fixed
+
+* Fixed unparseable date format by Lucee admin
+
+### \[3.0.0] => 2023-JUL-19
+
+#### Changed
+
+* Converted extension build to Gradle OSGI Bundle
+* Redis Client Library ( Jedis ) to v4.4.3
+
+#### Added
+
+* Added SSL and username support to RedisClusterCache configuration
+* Added username support to RedisCache ( non-cluster ) configuration
 
 ### \[2.2.1] => 2022-APR-06
 
@@ -21,8 +109,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 * Added support for cluster password authentication
 * Added cluster cache configuration for read timeouts
 * Added cluster cache configuration for max number of pool connections
-
-
 
 ### \[2.1.0] => 2022-MAR-16
 
@@ -63,8 +149,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 * [LRE-27](https://ortussolutions.atlassian.net/browse/LRE-27) Update Jedis to 2.9.3
 * [LRE-25](https://ortussolutions.atlassian.net/browse/LRE-25) Allow for a new setting to allow for case-sensitive mode instead of case-insensitive mode (default)
 
-
-
 ### \[1.4.0] => 2019-NOV-5
 
 * `New Features`
@@ -79,8 +163,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 * `Bugs`
   * Fixes an issue which caused the extension to fail on Lucee v5.2.9 and v5.3.x
 
-
-
 ### \[1.3.0] => 2019-SEP-30
 
 * Added ability to set the following new settings on a cache connection:
@@ -90,11 +172,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   * Max Connections
   * Max Idle Connections
 
-
-
 ### \[1.2.0] => 2019-MAR-05
 
-* Init methods on the cache constructor are not static - [https://ortussolutions.atlassian.net/browse/LRE-1](https://ortussolutions.atlassian.net/browse/LRE-1)
+* Init methods on the cache constructor are not static - https://ortussolutions.atlassian.net/browse/LRE-1
 * Auto publishing
 * S3 Publishing automated
 * Added more verbose logging

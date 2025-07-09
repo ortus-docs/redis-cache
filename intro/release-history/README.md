@@ -6,7 +6,7 @@ description: A collection of all the major releases of this extension
 
 In this section, you will find the release notes for each version we release under this major version. If you are looking for the release notes of previous major versions, use the version switcher at the top left of this documentation book. Here is a breakdown of our major version releases.
 
-## Version 3.x
+## Version 3.0.x
 
 The 3.x series focuses on JDK11 minimal support and complete internal refactoring to leverage Gradle as a build system for all Java components. It also makes a major bump in all of our internal libraries.
 
